@@ -1,20 +1,28 @@
 {
   "name": "electron-irtelemetry",
   "version": "0.0.1",
-  "description": "",
+  "description": "iRacing telemetry",
   "main": "main.js",
   "scripts": {
     "recompile": ".\\node_modules\\.bin\\electron-rebuild.cmd",
-    "start": "electron ."
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "keywords": [],
   "author": "hmiefert",
   "license": "MIT",
   "devDependencies": {
+    "@electron-forge/cli": "^6.0.4",
+    "@electron-forge/maker-deb": "^6.0.4",
+    "@electron-forge/maker-rpm": "^6.0.4",
+    "@electron-forge/maker-squirrel": "^6.0.4",
+    "@electron-forge/maker-zip": "^6.0.4",
     "electron": "^22.0.0",
     "electron-rebuild": "^3.2.9"
   },
   "dependencies": {
+    "electron-squirrel-startup": "^1.0.0",
     "node-irsdk-2023": "github:hmiefert/node-irsdk-2023"
   }
 }

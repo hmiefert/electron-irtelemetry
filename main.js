@@ -3,6 +3,8 @@ const path = require("path")
 
 const createWindow = () => {
   const win = new BrowserWindow({
+    icon: path.join(__dirname, 'images', 'ir_tele.ico'),
+
     width: 600,
     height: 1200,
     
