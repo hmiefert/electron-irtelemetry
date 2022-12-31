@@ -1,6 +1,9 @@
 const { app, BrowserWindow } = require('electron');
 const path = require("path")
 
+// squirrel startup for desktop icon
+if(require('electron-squirrel-startup')) return;
+
 const createWindow = () => {
   const win = new BrowserWindow({
     icon: path.join(__dirname, 'images', 'ir_tele.ico'),
