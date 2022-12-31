@@ -19,9 +19,7 @@ contextBridge.exposeInMainWorld('iRacing', {
         })
         
         ir.on('Disconnected', function () {
-            payload.connected = false
-            payload.sessionInfo = null
-            payload.telemetryData = null
+            payload = initPayload()
             handleUpdateFunction(payload)
         })
 
