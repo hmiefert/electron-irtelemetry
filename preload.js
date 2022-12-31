@@ -4,8 +4,8 @@ const irsdk = require('node-irsdk-2023')
 contextBridge.exposeInMainWorld('iRacing', {
     init: (handleUpdate) => {
         const ir = irsdk.init({
-            telemetryUpdateInterval: 50,
-            sessionInfoUpdateInterval: 2000
+            telemetryUpdateInterval: 1/60,
+            sessionInfoUpdateInterval: 1000
         })
 
         // init
