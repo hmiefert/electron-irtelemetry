@@ -19,6 +19,7 @@ Finally start the app
 npm run start
 ```
 # create application package
+Using [Electron Forge](https://www.electronforge.io)
 ```
 npm run make
 ```
