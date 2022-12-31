@@ -1,4 +1,4 @@
-const { contextBridge, ipcRenderer } = require('electron')
+const { contextBridge } = require('electron')
 const irsdk = require('node-irsdk-2023')
 
 contextBridge.exposeInMainWorld('iRacing', {
