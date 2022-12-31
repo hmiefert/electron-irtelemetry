@@ -1,9 +1,6 @@
 # electron-irtelemetry
 Barebones Electron iRacing telemetry project using [node-irsdk-2023](https://github.com/hmiefert/node-irsdk-2023).
 
-# screenshots
-![Screenshot disconnected](https://github.com/hmiefert/electron-irtelemetry/blob/main/screenshot_disconnected.png?raw=true)
-![Screenshot connected](https://github.com/hmiefert/electron-irtelemetry/blob/main/screenshot_connected.png?raw=true)
 # get it up and running
 Get the repo and install dependencies
 ```
@@ -21,3 +18,6 @@ Finally start the app
 ```
 npm run start
 ```
+# screenshots
+![Screenshot disconnected](https://github.com/hmiefert/electron-irtelemetry/blob/main/screenshot_disconnected.png?raw=true)
+![Screenshot connected](https://github.com/hmiefert/electron-irtelemetry/blob/main/screenshot_connected.png?raw=true)
