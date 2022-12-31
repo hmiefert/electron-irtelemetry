@@ -5,6 +5,11 @@ const createWindow = () => {
   const win = new BrowserWindow({
     width: 600,
     height: 1200,
+    
+    // frame: false,
+    // transparent: true,
+    // alwaysOnTop: true,    
+    
     webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
         nodeIntegration: true,
