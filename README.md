@@ -9,7 +9,7 @@ cd electron-irtelemetry
 npm install
 ```
 
-Recompile node-irsdk-2023 to math electrons NodeJS module version
+Recompile node-irsdk-2023 to match electrons NodeJS module version
 ```
 npm recompile
 ```
