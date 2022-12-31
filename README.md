@@ -5,7 +5,7 @@ Barebones Electron iRacing telemetry project using [node-irsdk-2023](https://git
 Get the repo and install dependencies
 ```
 git clone https://github.com/hmiefert/electron-irtelemetry
-cd irtelemetry
+cd electron-irtelemetry
 npm install
 ```
 
