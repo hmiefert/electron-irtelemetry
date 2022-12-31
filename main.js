@@ -2,7 +2,7 @@ const { app, BrowserWindow } = require('electron');
 const path = require("path")
 
 // squirrel startup for desktop icon
-if(require('electron-squirrel-startup')) return;
+if (require('electron-squirrel-startup')) app.quit();
 
 const createWindow = () => {
   const win = new BrowserWindow({
