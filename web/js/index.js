@@ -34,25 +34,33 @@
             sessionInfo.driversCarIdxLicString = payload.sessionInfo.data.DriverInfo.Drivers[sessionInfo.driverCarIdx].LicString,
             sessionInfo.driversCarIdxCurDriverIncidentCount = payload.sessionInfo.data.DriverInfo.Drivers[sessionInfo.driverCarIdx].CurDriverIncidentCount,
             
+
             sessionInfoElement.innerText = JSON.stringify(sessionInfo, null, 2)
         }
 
         if (payload.telemetryData) {
             // console.log("iRacing telemetryData received")
-            // console.log(payload.telemetryData)
+            console.log(payload.telemetryData)
             let telemetry = {
+                frameRate: payload.telemetryData.values.FrameRate,
+                cpuUsageFG: payload.telemetryData.values.CpuUsageFG,
+                cpuUsageBG: payload.telemetryData.values.CpuUsageBG,
+                connQuality: payload.telemetryData.values.ChanQuality,
+                connLatency: payload.telemetryData.values.ChanLatency,
+                connAvgLatency: payload.telemetryData.values.ChanAvgLatency,
+
                 airTemp: payload.telemetryData.values.AirTemp,
                 trackTemp: payload.telemetryData.values.TrackTemp,
                 
                 steeringWheelAngle: payload.telemetryData.values.SteeringWheelAngle,
                 throttle: payload.telemetryData.values.Throttle,
                 brake: payload.telemetryData.values.Brake,
+                clutch: payload.telemetryData.values.Clutch,
                 gear: payload.telemetryData.values.Gear,
 
                 rpm: payload.telemetryData.values.RPM,
                 speed: payload.telemetryData.values.Speed,
                 
-                sessionUID: payload.telemetryData.values.SessionUniqueID,
                 sessionTime: payload.telemetryData.values.SessionTime,
                 sessionTimeRemail: payload.telemetryData.values.SessionTimeRemail,
                 sessionTimeTotal: payload.telemetryData.values.SessionTimeTotal,
