@@ -4,29 +4,41 @@ const irsdk = require('node-irsdk-2023')
 contextBridge.exposeInMainWorld('iRacing', {
     init: (handleUpdateFunction) => {
         const ir = irsdk.init({
-            telemetryUpdateInterval: 500,
-            sessionInfoUpdateInterval: 1000
+            telemetryUpdateInterval: 100,
+            sessionInfoUpdateInterval: 3000
         })
+
+        // init
+        let payload = initPayload()
+        handleUpdateFunction(payload)
+
+        // events
         ir.on('Connected', function () {
-            const payload = {
-                "connected": true,
-            }
+            payload.connected = true
             handleUpdateFunction(payload)
         })
         
         ir.on('Disconnected', function () {
-            const payload = {
-                "connected": false,
-            }
+            payload = initPayload()
             handleFunction(payload)
         })
 
         ir.on('SessionInfo', function (sessionInfo) {
-            const payload = {
-                "connected": true,
-                "sessionInfo": sessionInfo,
-            }
+            payload.sessionInfo = sessionInfo
+            handleUpdateFunction(payload)
+        })
+
+        ir.on('Telemetry', function (telemetryData) {
+            payload.telemetryData = telemetryData
             handleUpdateFunction(payload)
         })
     }
 })
+
+function initPayload() {
+    return {
+        "connected": false,
+        "sessionInfo": null,
+        "telemetryData": null,
+    }
+}
