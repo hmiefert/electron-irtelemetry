@@ -42,28 +42,28 @@
             // console.log("iRacing sessionInfo received")
             // console.log(payload.telemetryData)
             let telemetry = {}
-            telemetry.frameRate = numToFixed(payload.telemetryData.values.FrameRate, 1)
-            telemetry.cpuUsageForeground = numToFixed(payload.telemetryData.values.CpuUsageFG, 3)
-            telemetry.cpuUsageBackground = numToFixed(payload.telemetryData.values.CpuUsageBG, 3)
-            telemetry.connectionQuality = numToFixed(payload.telemetryData.values.ChanQuality, 3)
-            telemetry.connectionLatency = numToFixed(payload.telemetryData.values.ChanLatency, 3),
-            telemetry.connectionAvgLatency = numToFixed(payload.telemetryData.values.ChanAvgLatency, 3)
+            telemetry.frameRate = numToFixed(payload.telemetryData.values.FrameRate, 1) + " FPS"
+            telemetry.cpuUsageForeground = numToFixed(payload.telemetryData.values.CpuUsageFG * 100, 0) + " %"
+            telemetry.cpuUsageBackground = numToFixed(payload.telemetryData.values.CpuUsageBG * 100, 0) + " %"
+            telemetry.connectionQuality = numToFixed(payload.telemetryData.values.ChanQuality * 100, 0) + " %"
+            telemetry.connectionLatency = numToFixed(payload.telemetryData.values.ChanLatency * 1000, 0) + " ms"
+            telemetry.connectionAvgLatency = numToFixed(payload.telemetryData.values.ChanAvgLatency * 1000, 0) + " ms"
 
-            telemetry.airTemp = numToFixed(payload.telemetryData.values.AirTemp, 1)
-            telemetry.trackTemp = numToFixed(payload.telemetryData.values.TrackTemp, 1)
+            telemetry.airTemp = numToFixed(payload.telemetryData.values.AirTemp, 1) + " C"
+            telemetry.trackTemp = numToFixed(payload.telemetryData.values.TrackTemp, 1) + " C"
                 
-            telemetry.steeringWheelAngle = numToFixed(payload.telemetryData.values.SteeringWheelAngle)
-            telemetry.throttle = numToFixed(payload.telemetryData.values.Throttle)
-            telemetry.brake = numToFixed(payload.telemetryData.values.Brake)
-            telemetry.clutch = numToFixed(payload.telemetryData.values.Clutch)
+            telemetry.steeringWheelAngle = numToFixed(payload.telemetryData.values.SteeringWheelAngle) + " °"
+            telemetry.throttle = numToFixed(payload.telemetryData.values.Throttle * 100, 0) + " %"
+            telemetry.brake = numToFixed(payload.telemetryData.values.Brake * 100, 0) + " %"
+            telemetry.clutch = numToFixed(payload.telemetryData.values.Clutch * 100, 0) + " %"
             telemetry.gear = payload.telemetryData.values.Gear
 
-            telemetry.rpm = numToFixed(payload.telemetryData.values.RPM)
-            telemetry.speed = numToFixed(payload.telemetryData.values.Speed)
+            telemetry.rpm = numToFixed(payload.telemetryData.values.RPM, 0)
+            telemetry.speed = numToFixed(payload.telemetryData.values.Speed, 0) + " km/h"
                 
-            telemetry.sessionTime = numToFixed(payload.telemetryData.values.SessionTime, 1)
-            telemetry.sessionTimeRemain = numToFixed(payload.telemetryData.values.SessionTimeRemain, 1)
-            telemetry.sessionTimeTotal = numToFixed(payload.telemetryData.values.SessionTimeTotal, 1)
+            telemetry.sessionTime = numToFixed(payload.telemetryData.values.SessionTime, 1) + " seconds"
+            telemetry.sessionTimeRemain = numToFixed(payload.telemetryData.values.SessionTimeRemain, 1) + " seconds"
+            telemetry.sessionTimeTotal = numToFixed(payload.telemetryData.values.SessionTimeTotal, 1) + " seconds"
 
             liveTelemetryElement.innerText = JSON.stringify(telemetry, null, 2)
         }
