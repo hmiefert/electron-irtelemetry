@@ -10,6 +10,8 @@
         } else {
             // console.log("iRacing disconnected")
             connectionStatusElement.innerText = "disconnected"
+            liveTelemetryElement.innerText = ""
+            sessionInfoElement.innerText = ""
         }
         
         if (payload.sessionInfo) {
