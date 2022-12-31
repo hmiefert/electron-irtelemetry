@@ -42,7 +42,7 @@
                 airTemp: payload.telemetryData.values.AirTemp,
                 trackTemp: payload.telemetryData.values.TrackTemp,
                 
-                steeringWheelAngle: payload.telemetryData.values.steeringWheelAngle,
+                steeringWheelAngle: payload.telemetryData.values.SteeringWheelAngle,
                 throttle: payload.telemetryData.values.Throttle,
                 brake: payload.telemetryData.values.Brake,
                 gear: payload.telemetryData.values.Gear,
