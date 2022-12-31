@@ -1,0 +1,18 @@
+{
+  "name": "electron-irtelemetry",
+  "version": "0.0.1",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "hmiefert",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^22.0.0"
+  },
+  "dependencies": {
+    "node-irsdk-2023": "github:hmiefert/node-irsdk-2023"
+  }
+}
