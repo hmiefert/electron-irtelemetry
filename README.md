@@ -9,7 +9,8 @@ cd electron-irtelemetry
 npm install
 ```
 
-Recompile node-irsdk-2023 to match electrons NodeJS module version
+Recompile node-irsdk-2023 to match electrons NodeJS module version.
+If you get errors running this command read [this](https://github.com/hmiefert/node-irsdk-2023#prerequesites) and [this](https://github.com/hmiefert/node-irsdk-2023#using-with-electron)
 ```
 npm run recompile
 ```
