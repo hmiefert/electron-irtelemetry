@@ -2,7 +2,7 @@ const { contextBridge } = require('electron')
 const irsdk = require('node-irsdk-2023')
 
 contextBridge.exposeInMainWorld('iRacing', {
-    init: (handleUpdateFunction) => {
+    init: (handleUpdate) => {
         const ir = irsdk.init({
             telemetryUpdateInterval: 50,
             sessionInfoUpdateInterval: 2000
@@ -10,27 +10,27 @@ contextBridge.exposeInMainWorld('iRacing', {
 
         // init
         let payload = initPayload()
-        handleUpdateFunction(payload)
+        handleUpdate(payload)
 
         // events
         ir.on('Connected', function () {
             payload.connected = true
-            handleUpdateFunction(payload)
+            handleUpdate(payload)
         })
         
         ir.on('Disconnected', function () {
             payload = initPayload()
-            handleUpdateFunction(payload)
+            handleUpdate(payload)
         })
 
         ir.on('SessionInfo', function (sessionInfo) {
             payload.sessionInfo = sessionInfo
-            handleUpdateFunction(payload)
+            handleUpdate(payload)
         })
 
         ir.on('Telemetry', function (telemetryData) {
             payload.telemetryData = telemetryData
-            handleUpdateFunction(payload)
+            handleUpdate(payload)
         })
     }
 })
