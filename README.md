@@ -11,7 +11,7 @@ npm install
 
 Recompile node-irsdk-2023 to match electrons NodeJS module version
 ```
-npm recompile
+npm run recompile
 ```
 
 Finally start the app
