@@ -4,13 +4,15 @@
   "description": "",
   "main": "main.js",
   "scripts": {
+    "recompile": ".\\node_modules\\.bin\\electron-rebuild.cmd",
     "start": "electron ."
   },
   "keywords": [],
   "author": "hmiefert",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^22.0.0"
+    "electron": "^22.0.0",
+    "electron-rebuild": "^3.2.9"
   },
   "dependencies": {
     "node-irsdk-2023": "github:hmiefert/node-irsdk-2023"

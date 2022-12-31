@@ -2,19 +2,31 @@ const { contextBridge, ipcRenderer } = require('electron')
 const irsdk = require('node-irsdk-2023')
 
 contextBridge.exposeInMainWorld('iRacing', {
-    init: () => {
+    init: (handleUpdateFunction) => {
         const ir = irsdk.init({
             telemetryUpdateInterval: 500,
-            sessionInfoUpdateInterval: 5000
+            sessionInfoUpdateInterval: 1000
         })
         ir.on('Connected', function () {
-            console.log('iRacing telemetry connected')
-            ipcRenderer.send('{"connected": true}')
+            const payload = {
+                "connected": true,
+            }
+            handleUpdateFunction(payload)
         })
         
         ir.on('Disconnected', function () {
-            console.log('iRacing telemetry disconnected')
-            ipcRenderer.send('{"connected": false}')
+            const payload = {
+                "connected": false,
+            }
+            handleFunction(payload)
+        })
+
+        ir.on('SessionInfo', function (sessionInfo) {
+            const payload = {
+                "connected": true,
+                "sessionInfo": sessionInfo,
+            }
+            handleUpdateFunction(payload)
         })
     }
 })

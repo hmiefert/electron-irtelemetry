@@ -11,10 +11,19 @@
       http-equiv="X-Content-Security-Policy"
       content="default-src 'self'; script-src 'self'"
     />
-    <title>Hello from Electron renderer!</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>iRacing Telemetry</title>
   </head>
   <body>
-    <h1>Hello from Electron renderer!</h1>
-    <p>👋</p>
+    <div class="container">
+      <h1>iRacing Telemetry</h1>
+
+      <h4>connection status</h4>
+      <p id="connectionStatus"></p>
+
+      <h4>session info</h4>
+      <p id="sessionInfo"></p>
+    </div>
+    <script src="./js/index.js"></script>
   </body>
 </html>
