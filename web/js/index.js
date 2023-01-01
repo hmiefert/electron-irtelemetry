@@ -1,8 +1,14 @@
 (function(){
+    let globalPayload = {}
     function handleUpdate (payload) {
+        globalPayload = payload
+
         const connectionStatusElement = document.getElementById("connectionStatus")
         const liveTelemetryElement = document.getElementById("liveTelemetry")
         const sessionInfoElement = document.getElementById("sessionInfo")
+
+        const saveToDesktopBtn = document.getElementById("saveToDesktop")
+        saveToDesktopBtn.addEventListener('click', saveToDesktop)
 
         if (payload.connected) {
             // console.log("iRacing connected")
@@ -70,6 +76,10 @@
     }
     
     window.iRacing.init(handleUpdate)
+
+    function saveToDesktop(){
+        window.iRacing.saveToDesktop(globalPayload)
+    }
 
     function numToFixed(n, d=2) {
         return n.toFixed(d)

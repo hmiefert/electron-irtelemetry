@@ -17,16 +17,26 @@
   </head>
   <body>
     <div class="container">
-      <h1>iRacing Telemetry</h1>
-
-      <h4>connection status</h4>
-      <p id="connectionStatus"></p>
-
-      <h4>live telemetry</h4>
-      <p id="liveTelemetry"></p>
-
-      <h4>session info</h4>
-      <p id="sessionInfo"></p>
+      <div class="row justify-content-center header-top">
+        <div class="col-9">
+          <h1>iRacing Telemetry</h1>
+        </div>
+        <div class="col-3">
+          <button id="saveToDesktop" class="btn btn-primary">Save to Desktop</button>
+        </div>        
+      </div>
+      <div class="row justify-content-center">
+        <h4>connection status</h4>
+        <p id="connectionStatus"></p>
+      </div>
+      <div class="row justify-content-center">
+        <h4>live telemetry</h4>
+        <p id="liveTelemetry"></p> 
+      </div>
+      <div class="row justify-content-center">
+        <h4>session info</h4>
+        <p id="sessionInfo"></p>
+      </div>      
     </div>
     <script src="./js/index.js"></script>
   </body>
