@@ -1,5 +1,5 @@
 # electron-irtelemetry
-Barebones Electron iRacing telemetry project using [node-irsdk-2023](https://github.com/hmiefert/node-irsdk-2023).
+Barebones iRacing telemetry project using [node-irsdk-2023](https://github.com/hmiefert/node-irsdk-2023) and [ElectronJS](https://www.electronjs.org).
 
 # get it up and running
 Clone the repo and install dependencies
@@ -19,6 +19,7 @@ Finally start the app
 npm run start
 ```
 # create application package
+Using [Electron Forge](https://www.electronforge.io)
 ```
 npm run make
 ```
