@@ -13,7 +13,7 @@ const createWindow = () => {
     
     // frame: false,
     // transparent: true,
-    // alwaysOnTop: true,    
+    alwaysOnTop: true,    
     
     webPreferences: {
         preload: path.join(__dirname, 'preload.js'),
