@@ -68,9 +68,9 @@
             telemetry.rpm = numToFixed(payload.telemetryData.values.RPM, 0)
             telemetry.speed = numToFixed(metersPerSecondToKilometersPerHour(payload.telemetryData.values.Speed), 0) + " km/h"
                 
-            telemetry.sessionTime = numToFixed(payload.telemetryData.values.SessionTime, 1) + " seconds"
-            telemetry.sessionTimeRemain = numToFixed(payload.telemetryData.values.SessionTimeRemain, 1) + " seconds"
-            telemetry.sessionTimeTotal = numToFixed(payload.telemetryData.values.SessionTimeTotal, 1) + " seconds"
+            telemetry.sessionTime = displayTime(payload.telemetryData.values.SessionTime)
+            telemetry.sessionTimeRemain = displayTime(payload.telemetryData.values.SessionTimeRemain)
+            telemetry.sessionTimeTotal = displayTime(payload.telemetryData.values.SessionTimeTotal)
 
             liveTelemetryElement.innerText = JSON.stringify(telemetry, null, 2)
         }
@@ -84,6 +84,37 @@
 
     function numToFixed(n, d=2) {
         return n.toFixed(d)
+    }
+
+    function displayTime(seconds, showDecimals=false) {
+        let h = 0
+        let m = 0
+        let s = 0
+        let ms = 0
+        const sec = seconds
+
+        if ((sec / 3600) >= 1) {
+            h = Math.trunc(sec / 3600)
+            s = sec % 3600
+        } else {
+            s = sec
+        }
+
+        if ((s / 60) >= 1) {
+            m = Math.trunc(s / 60)
+            s = s % 60
+        }
+
+        if (showDecimals) {
+            ms = s - Math.trunc(s)
+            s = Math.trunc(s)
+            
+            return h + 'h ' + m + "m " + s + "s " + ms.toFixed(3) * 1000 + "ms"
+        }
+
+        s = Math.trunc(s)
+
+        return h + 'h ' + m + "m " + s + "s"
     }
 
     function radToDegree(n) {
