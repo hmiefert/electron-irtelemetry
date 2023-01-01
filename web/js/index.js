@@ -49,6 +49,7 @@
             // console.log(payload.telemetryData)
             let telemetry = {}
             telemetry.frameRate = numToFixed(payload.telemetryData.values.FrameRate, 1) + " FPS"
+            telemetry.gpuUsageForeground = numToFixed(payload.telemetryData.values.GpuUsage * 100, 0) + " %"
             telemetry.cpuUsageForeground = numToFixed(payload.telemetryData.values.CpuUsageFG * 100, 0) + " %"
             telemetry.cpuUsageBackground = numToFixed(payload.telemetryData.values.CpuUsageBG * 100, 0) + " %"
             telemetry.connectionQuality = numToFixed(payload.telemetryData.values.ChanQuality * 100, 0) + " %"
