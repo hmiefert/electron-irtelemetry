@@ -58,14 +58,14 @@
             telemetry.airTemp = numToFixed(payload.telemetryData.values.AirTemp, 1) + " C"
             telemetry.trackTemp = numToFixed(payload.telemetryData.values.TrackTemp, 1) + " C"
                 
-            telemetry.steeringWheelAngle = numToFixed(payload.telemetryData.values.SteeringWheelAngle) + " °"
+            telemetry.steeringWheelAngle = numToFixed(payload.telemetryData.values.SteeringWheelAngle * 56.5, 0) + " °"
             telemetry.throttle = numToFixed(payload.telemetryData.values.Throttle * 100, 0) + " %"
             telemetry.brake = numToFixed(payload.telemetryData.values.Brake * 100, 0) + " %"
             telemetry.clutch = numToFixed(payload.telemetryData.values.Clutch * 100, 0) + " %"
             telemetry.gear = payload.telemetryData.values.Gear
 
             telemetry.rpm = numToFixed(payload.telemetryData.values.RPM, 0)
-            telemetry.speed = numToFixed(payload.telemetryData.values.Speed, 0) + " km/h"
+            telemetry.speed = numToFixed(payload.telemetryData.values.Speed * 3.61, 0) + " km/h"
                 
             telemetry.sessionTime = numToFixed(payload.telemetryData.values.SessionTime, 1) + " seconds"
             telemetry.sessionTimeRemain = numToFixed(payload.telemetryData.values.SessionTimeRemain, 1) + " seconds"
