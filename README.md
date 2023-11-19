@@ -3,6 +3,8 @@ Barebones iRacing telemetry project using [node-irsdk-2023](https://github.com/h
 
 # get it up and running
 Clone the repo and install dependencies
+<br>
+Update 2023-11-19: Had to set a different Python version via `set PYTHON=python3.7` as Python deprecated the distutils package in version 3.10 and removed it with version 3.12, which now is causing node-gyp errors.
 ```
 git clone https://github.com/hmiefert/electron-irtelemetry
 cd electron-irtelemetry
